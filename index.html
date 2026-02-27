@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <title>我的電子商品券</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2563eb; --secondary: #1e293b; --bg: #f8fafc; }
+        body { font-family: 'Noto Sans TC', sans-serif; background: var(--bg); margin: 0; padding: 15px; display: none; justify-content: center; }
+        .container { width: 100%; max-width: 600px; }
+        header { background: var(--secondary); color: white; padding: 25px; border-radius: 20px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        .list-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #f1f5f9; padding: 12px; font-size: 0.8rem; color: #64748b; text-align: left; }
+        td { padding: 16px 12px; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; }
+        .item-name { font-weight: 700; color: #334155; line-height: 1.4; display: block; }
+        .expiry-label { color: #e11d48; font-weight: bold; background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; border: 1px solid rgba(225,29,72,0.2); font-size: 0.75rem; }
+        .btn-use { background: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; -webkit-appearance: none; }
+        .footer-info { background: white; margin-top: 20px; padding: 25px; border-radius: 20px; text-align: center; border: 2px dashed #cbd5e1; font-weight: bold; font-size: 1.2rem; color: #475569; }
+        .clicked { opacity: 0.3 !important; filter: grayscale(1); }
+    </style>
+    <script>
+        // 進入網頁檢查密碼
+        (function() {
+            const pass = prompt("請輸入提取密碼以檢視票券：");
+            if (pass === "2724203") {
+                window.onload = function() { document.body.style.display = 'flex'; };
+            } else {
+                alert("密碼錯誤，拒絕存取。");
+                window.location.href = "https://www.google.com";
+            }
+        })();
+
+        function openV(url, id) {
+            // 標記已點擊
+            document.getElementById('row-'+id).classList.add('clicked');
+            // Apple 裝置必須使用新視窗開啟，條碼才能正常顯示且自動調整亮度
+            window.open(url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎟️ 我的電子商品券</h1>
+            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">最後更新：2026-02-27 13:07</div>
+        </header>
+        <div class="list-card">
+            <table>
+                <thead>
+                    <tr><th width="10%">#</th><th width="65%">品項與效期</th><th width="25%">操作</th></tr>
+                </thead>
+                <tbody>
+
+        <tr id="row-1" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">1</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=049e362f-95f5-42b6-9e57-9674cb7304f7', '1')">使用</button></td>
+        </tr>
+        <tr id="row-2" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">2</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=04e0d67b-2e04-474a-b09f-6ccf3e04005d', '2')">使用</button></td>
+        </tr>
+        <tr id="row-3" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">3</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=086459d5-8468-443c-85b2-8b56cfa5200e', '3')">使用</button></td>
+        </tr>
+        <tr id="row-4" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">4</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=09385aab-259c-4e8f-940d-3c1a05488566', '4')">使用</button></td>
+        </tr>
+        <tr id="row-5" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">5</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=0d5fd8ab-a0d7-4086-ad26-9df4c7258e5b', '5')">使用</button></td>
+        </tr>
+        <tr id="row-6" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">6</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=0da605f4-56b3-43ce-8f1a-ddcdd38675b7', '6')">使用</button></td>
+        </tr>
+        <tr id="row-7" style="background-color: #dcfce7;">
+            <td style="text-align:center;">7</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=12185f31-1eef-4335-8327-a6ae4e0bf22c', '7')">使用</button></td>
+        </tr>
+        <tr id="row-8" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">8</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=12cc7c41-508a-4117-963b-29ee2125bd06', '8')">使用</button></td>
+        </tr>
+        <tr id="row-9" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">9</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=137cd296-1c80-4993-adfc-f1d222fdc179', '9')">使用</button></td>
+        </tr>
+        <tr id="row-10" style="background-color: #dcfce7;">
+            <td style="text-align:center;">10</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=19236812-a023-479d-b0d4-1c0eb2b04e86', '10')">使用</button></td>
+        </tr>
+        <tr id="row-11" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">11</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=1a2fb52d-af14-4b97-a813-58970f44fca0', '11')">使用</button></td>
+        </tr>
+        <tr id="row-12" style="background-color: #dcfce7;">
+            <td style="text-align:center;">12</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=1d2694a8-b7d7-461d-a952-90fab7b39e5c', '12')">使用</button></td>
+        </tr>
+        <tr id="row-13" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">13</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=1d8308da-501d-4d88-99ad-f1c038ac0bdb', '13')">使用</button></td>
+        </tr>
+        <tr id="row-14" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">14</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=2af5c790-e4da-4f6f-87a0-819d1e9b6345', '14')">使用</button></td>
+        </tr>
+        <tr id="row-15" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">15</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=2d0e647e-b00e-4ec9-9508-73a7a81ede7d', '15')">使用</button></td>
+        </tr>
+        <tr id="row-16" style="background-color: #dcfce7;">
+            <td style="text-align:center;">16</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=30bbec0b-7955-4177-bf12-d0d67bc72b79', '16')">使用</button></td>
+        </tr>
+        <tr id="row-17" style="background-color: #dcfce7;">
+            <td style="text-align:center;">17</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=3b4b01b1-7e15-4b23-9033-0c56d320c1aa', '17')">使用</button></td>
+        </tr>
+        <tr id="row-18" style="background-color: #dcfce7;">
+            <td style="text-align:center;">18</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=3e21b24a-bfd1-4813-89ce-7a1953cf430f', '18')">使用</button></td>
+        </tr>
+        <tr id="row-19" style="background-color: #dcfce7;">
+            <td style="text-align:center;">19</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=4102170c-5af5-489f-bbac-2357dc5ef3a3', '19')">使用</button></td>
+        </tr>
+        <tr id="row-20" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">20</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=420e55b4-8538-4864-a657-111dea7b850c', '20')">使用</button></td>
+        </tr>
+        <tr id="row-21" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">21</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=42104552-2aa9-4835-b6da-d785733cbfc5', '21')">使用</button></td>
+        </tr>
+        <tr id="row-22" style="background-color: #dcfce7;">
+            <td style="text-align:center;">22</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=46152b36-a5c4-4a2a-9d72-ece484467e2f', '22')">使用</button></td>
+        </tr>
+        <tr id="row-23" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">23</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=479c8611-1d54-460b-ab48-c32199a5f3b9', '23')">使用</button></td>
+        </tr>
+        <tr id="row-24" style="background-color: #dcfce7;">
+            <td style="text-align:center;">24</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=49d70930-d117-4965-8bd4-a3b4f68edcb9', '24')">使用</button></td>
+        </tr>
+        <tr id="row-25" style="background-color: #dcfce7;">
+            <td style="text-align:center;">25</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=4ad1c887-6711-4871-90cb-ab2ad78fa6c4', '25')">使用</button></td>
+        </tr>
+        <tr id="row-26" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">26</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=4b0d941f-d87e-4e19-aa04-03113de0ac1b', '26')">使用</button></td>
+        </tr>
+        <tr id="row-27" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">27</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=4c7c68b4-936f-4e79-8a58-251caf0f6d94', '27')">使用</button></td>
+        </tr>
+        <tr id="row-28" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">28</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=537bce42-7556-4e9e-bcbc-3244fa9c2afe', '28')">使用</button></td>
+        </tr>
+        <tr id="row-29" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">29</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=5944d35b-32c9-4d2e-8685-a8408cac11b5', '29')">使用</button></td>
+        </tr>
+        <tr id="row-30" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">30</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=5de9f8d7-9ee8-4bcf-9d83-e3b76d771433', '30')">使用</button></td>
+        </tr>
+        <tr id="row-31" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">31</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=5ff4ec82-62be-4370-9a41-687b8f9ad07b', '31')">使用</button></td>
+        </tr>
+        <tr id="row-32" style="background-color: #dcfce7;">
+            <td style="text-align:center;">32</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=607a0ecf-b4ed-406a-9c9d-9d3e5cfaf836', '32')">使用</button></td>
+        </tr>
+        <tr id="row-33" style="background-color: #dcfce7;">
+            <td style="text-align:center;">33</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=612dcc56-31fa-40a0-bcf3-58d2764fdbf9', '33')">使用</button></td>
+        </tr>
+        <tr id="row-34" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">34</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=615f8099-ac99-43dd-930a-cb1d7ba31d75', '34')">使用</button></td>
+        </tr>
+        <tr id="row-35" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">35</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=615ff402-0ac7-40ab-8bb8-e2adf4ed59b3', '35')">使用</button></td>
+        </tr>
+        <tr id="row-36" style="background-color: #dcfce7;">
+            <td style="text-align:center;">36</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=61705fec-4201-4147-b160-f33e5fa4be73', '36')">使用</button></td>
+        </tr>
+        <tr id="row-37" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">37</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=65cc974a-c1a4-4fbc-adf8-4353ac09d324', '37')">使用</button></td>
+        </tr>
+        <tr id="row-38" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">38</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=66e75580-df58-49d0-9270-b8da268e94a7', '38')">使用</button></td>
+        </tr>
+        <tr id="row-39" style="background-color: #dcfce7;">
+            <td style="text-align:center;">39</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=6788a8fa-5575-482a-9205-ae194c7ac3fa', '39')">使用</button></td>
+        </tr>
+        <tr id="row-40" style="background-color: #dcfce7;">
+            <td style="text-align:center;">40</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=7111d21e-6f1c-4641-b746-ae963aaa35f8', '40')">使用</button></td>
+        </tr>
+        <tr id="row-41" style="background-color: #dcfce7;">
+            <td style="text-align:center;">41</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=73963c8a-a723-4b88-8324-152e9f3fdc45', '41')">使用</button></td>
+        </tr>
+        <tr id="row-42" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">42</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=77cb5221-60ad-464b-bcaf-7a2a0cd02b9e', '42')">使用</button></td>
+        </tr>
+        <tr id="row-43" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">43</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=79d272be-f0a8-42ec-8225-dc0a8a896596', '43')">使用</button></td>
+        </tr>
+        <tr id="row-44" style="background-color: #dcfce7;">
+            <td style="text-align:center;">44</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=7ab0d20d-dd77-4c1f-9b6a-faac5c4cd651', '44')">使用</button></td>
+        </tr>
+        <tr id="row-45" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">45</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=7b1b8be0-4b40-41b8-a7d3-8ed8f1035e9b', '45')">使用</button></td>
+        </tr>
+        <tr id="row-46" style="background-color: #dcfce7;">
+            <td style="text-align:center;">46</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=7b2da365-baa9-4802-aa17-25e8566f8877', '46')">使用</button></td>
+        </tr>
+        <tr id="row-47" style="background-color: #dcfce7;">
+            <td style="text-align:center;">47</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=7c12ce20-32e4-421e-be83-30dfdeec4a53', '47')">使用</button></td>
+        </tr>
+        <tr id="row-48" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">48</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=7c3729d5-d853-47c5-8fe2-1b60fa15fa15', '48')">使用</button></td>
+        </tr>
+        <tr id="row-49" style="background-color: #dcfce7;">
+            <td style="text-align:center;">49</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=81080e44-ff09-49fe-a0f9-9092adda7dcb', '49')">使用</button></td>
+        </tr>
+        <tr id="row-50" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">50</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=83a2a584-ac54-4b1c-90b6-8a322cdb8f41', '50')">使用</button></td>
+        </tr>
+        <tr id="row-51" style="background-color: #dcfce7;">
+            <td style="text-align:center;">51</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=846ba56b-15b5-42d6-a1d8-55927cdd2064', '51')">使用</button></td>
+        </tr>
+        <tr id="row-52" style="background-color: #dcfce7;">
+            <td style="text-align:center;">52</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=84db9364-7942-46d2-85c0-ff120d246211', '52')">使用</button></td>
+        </tr>
+        <tr id="row-53" style="background-color: #dcfce7;">
+            <td style="text-align:center;">53</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=87a99f8e-cc6f-434c-a665-dccbac1dd094', '53')">使用</button></td>
+        </tr>
+        <tr id="row-54" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">54</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=894c4464-73d8-463f-8320-5c77137c1c37', '54')">使用</button></td>
+        </tr>
+        <tr id="row-55" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">55</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=951825da-8b65-4f86-b112-f3593e98f189', '55')">使用</button></td>
+        </tr>
+        <tr id="row-56" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">56</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=9725b660-bd9d-4ae4-885e-fbcc8ec6f136', '56')">使用</button></td>
+        </tr>
+        <tr id="row-57" style="background-color: #dcfce7;">
+            <td style="text-align:center;">57</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=991635a2-b1f1-4dba-9ca8-30183ee6bf39', '57')">使用</button></td>
+        </tr>
+        <tr id="row-58" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">58</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=9e95cfa5-a07b-4898-beb2-d8b8c7b8adc6', '58')">使用</button></td>
+        </tr>
+        <tr id="row-59" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">59</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=a060a735-2565-4b99-9498-2a9f1961d6c9', '59')">使用</button></td>
+        </tr>
+        <tr id="row-60" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">60</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=ab04da4a-58d3-4a58-9821-d91b0affd381', '60')">使用</button></td>
+        </tr>
+        <tr id="row-61" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">61</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=ad7248f1-0293-43ed-89b8-5a80e96792ac', '61')">使用</button></td>
+        </tr>
+        <tr id="row-62" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">62</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=b29d9a54-6564-44fe-97ea-b0116b382b39', '62')">使用</button></td>
+        </tr>
+        <tr id="row-63" style="background-color: #dcfce7;">
+            <td style="text-align:center;">63</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=b2e74240-eb37-4de9-bf1c-316482a76b1f', '63')">使用</button></td>
+        </tr>
+        <tr id="row-64" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">64</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=b6866579-6ad2-4881-88ef-477b6f803b5a', '64')">使用</button></td>
+        </tr>
+        <tr id="row-65" style="background-color: #dcfce7;">
+            <td style="text-align:center;">65</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=c28d5e81-4df1-4bcc-9df8-85be273879d7', '65')">使用</button></td>
+        </tr>
+        <tr id="row-66" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">66</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=c3936354-a147-4df0-a6a9-fb23aabeea05', '66')">使用</button></td>
+        </tr>
+        <tr id="row-67" style="background-color: #dcfce7;">
+            <td style="text-align:center;">67</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=c5a110cc-3c91-4bd8-97db-ae88070f4749', '67')">使用</button></td>
+        </tr>
+        <tr id="row-68" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">68</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=c971f3ea-f5a3-4b00-af05-9cbc900c57cb', '68')">使用</button></td>
+        </tr>
+        <tr id="row-69" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">69</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=d2f1170d-50d3-4cce-babf-032125b5fb16', '69')">使用</button></td>
+        </tr>
+        <tr id="row-70" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">70</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=d4b4aa0c-9725-49ba-b6da-95dbbc8ac36a', '70')">使用</button></td>
+        </tr>
+        <tr id="row-71" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">71</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=d627ed13-ea23-4986-b97e-887174fb4599', '71')">使用</button></td>
+        </tr>
+        <tr id="row-72" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">72</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=dae5c8e1-48a7-4208-9fad-848a6d3b97a0', '72')">使用</button></td>
+        </tr>
+        <tr id="row-73" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">73</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e110a66c-9ae0-4e25-882b-995953992dce', '73')">使用</button></td>
+        </tr>
+        <tr id="row-74" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">74</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e3e36b9f-26a0-4b7a-88b4-ecb649cba703', '74')">使用</button></td>
+        </tr>
+        <tr id="row-75" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">75</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e45a547b-a3dc-4df8-802c-47c7c873aa7c', '75')">使用</button></td>
+        </tr>
+        <tr id="row-76" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">76</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e5c35707-862f-43e7-b1fd-5b0549fc3653', '76')">使用</button></td>
+        </tr>
+        <tr id="row-77" style="background-color: #dcfce7;">
+            <td style="text-align:center;">77</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e6492b96-685d-4f2b-9459-f98b7fe7febd', '77')">使用</button></td>
+        </tr>
+        <tr id="row-78" style="background-color: #dcfce7;">
+            <td style="text-align:center;">78</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e678ecc1-3310-4c24-a345-5742bfd390ac', '78')">使用</button></td>
+        </tr>
+        <tr id="row-79" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">79</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e6d8de63-42b6-4824-bd74-bafa1173ccc6', '79')">使用</button></td>
+        </tr>
+        <tr id="row-80" style="background-color: #dcfce7;">
+            <td style="text-align:center;">80</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e77ef971-5289-4796-bb99-cc63283d16ff', '80')">使用</button></td>
+        </tr>
+        <tr id="row-81" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">81</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e8c2872b-ad28-486e-9ac3-c695cc355c09', '81')">使用</button></td>
+        </tr>
+        <tr id="row-82" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">82</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e8fb41d7-1b7d-4888-897e-24815899ac7c', '82')">使用</button></td>
+        </tr>
+        <tr id="row-83" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">83</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=e902a065-374f-4d58-a120-71f459544b1b', '83')">使用</button></td>
+        </tr>
+        <tr id="row-84" style="background-color: #dcfce7;">
+            <td style="text-align:center;">84</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=ebfbc2b4-764a-4650-b017-632feab507e4', '84')">使用</button></td>
+        </tr>
+        <tr id="row-85" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">85</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=ec51872b-3ade-4abf-a456-6c9d0c87e612', '85')">使用</button></td>
+        </tr>
+        <tr id="row-86" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">86</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=ed3e1f8d-d519-4f70-8551-a3be11eed328', '86')">使用</button></td>
+        </tr>
+        <tr id="row-87" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">87</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=ed4dc26c-2602-4c90-b372-ece2e2980901', '87')">使用</button></td>
+        </tr>
+        <tr id="row-88" style="background-color: #dcfce7;">
+            <td style="text-align:center;">88</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=edf8b55d-9c04-492f-b105-a66a793e918d', '88')">使用</button></td>
+        </tr>
+        <tr id="row-89" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">89</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=eea11525-ba04-4020-a321-32040bccaa2d', '89')">使用</button></td>
+        </tr>
+        <tr id="row-90" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">90</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=f1304110-4246-4c69-9866-aacb0d835f66', '90')">使用</button></td>
+        </tr>
+        <tr id="row-91" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">91</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=f47dc514-33c1-4289-926b-b12ac3a2da72', '91')">使用</button></td>
+        </tr>
+        <tr id="row-92" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">92</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=f4f73ab9-b93d-4e2b-90f7-4f07fa437364', '92')">使用</button></td>
+        </tr>
+        <tr id="row-93" style="background-color: #dcfce7;">
+            <td style="text-align:center;">93</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯拿鐵或大杯美式1杯(冰熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=fc7ba8d3-6747-464f-ad6b-375bf57450a8', '93')">使用</button></td>
+        </tr>
+        <tr id="row-94" style="background-color: #e0f2fe;">
+            <td style="text-align:center;">94</td>
+            <td>
+                <span class="item-name">CITY CAFE虛擬提貨卡:中杯美式或四季春青茶或經典紅茶1杯(冰/熱不限)</span>
+                <span class="expiry-label">無期限</span>
+            </td>
+            <td><button class="btn-use" onclick="openV('https://txp.rs/viewvoucher.aspx?voucherguid=fecdabc0-91d8-4d1f-9212-628391508bc4', '94')">使用</button></td>
+        </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer-info">目前剩餘可用： <span style="color:var(--primary); font-size: 1.8rem;">94</span> 張</div>
+    </div>
+</body></html>
