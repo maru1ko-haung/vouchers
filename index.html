@@ -2,9 +2,9 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>我的電子商品券</title>
+    <title>我的電子券清單</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #2563eb; --secondary: #1e293b; --bg: #f8fafc; }
@@ -18,24 +18,38 @@
         td { padding: 16px 12px; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; }
         .item-name { font-weight: 700; color: #334155; line-height: 1.4; display: block; }
         .expiry-label { color: #e11d48; font-weight: bold; background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; border: 1px solid rgba(225,29,72,0.2); font-size: 0.75rem; }
-        .btn-use { background: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; -webkit-appearance: none; }
+        .btn-use { background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(37,99,235,0.2); }
         .footer-info { background: white; margin-top: 20px; padding: 25px; border-radius: 20px; text-align: center; border: 2px dashed #cbd5e1; font-weight: bold; font-size: 1.2rem; color: #475569; }
-        .clicked { opacity: 0.3 !important; filter: grayscale(1); }
+        
+        /* 彈窗樣式 */
+        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.9); z-index: 100; backdrop-filter: blur(4px); }
+        #m-cont { position: absolute; top: 5%; left: 5%; width: 90%; height: 90%; background: white; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+        #m-head { padding: 12px; background: #f8fafc; text-align: right; border-bottom: 1px solid #eee; }
+        #close-btn { padding: 8px 20px; background: #e11d48; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        iframe { flex: 1; border: none; width: 100%; }
+        tr:hover { filter: brightness(0.95); }
     </style>
     <script>
+        // 1. 密碼保護
         (function() {
-            const pass = prompt("請輸入提取密碼以檢視票券：");
+            const pass = prompt("請輸入提取密碼：");
             if (pass === "2724203") {
                 window.onload = function() { document.body.style.display = 'flex'; };
             } else {
-                alert("密碼錯誤，拒絕存取。");
+                alert("密碼錯誤！");
                 window.location.href = "https://www.google.com";
             }
         })();
 
+        // 2. 彈窗控制
         function openV(url, id) {
-            document.getElementById('row-'+id).classList.add('clicked');
-            window.open(url, '_blank');
+            document.getElementById('row-'+id).style.opacity = '0.3';
+            document.getElementById('ifr').src = url;
+            document.getElementById('modal').style.display = 'block';
+        }
+        function closeV() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('ifr').src = '';
         }
     </script>
 </head>
@@ -43,7 +57,7 @@
     <div class="container">
         <header>
             <h1>🎟️ 我的電子商品券</h1>
-            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">最後更新：2026-02-27 14:54</div>
+            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">最後更新：2026-02-27 15:30</div>
         </header>
         <div class="list-card">
             <table>
@@ -809,5 +823,13 @@
         </div>
         <div class="footer-info">目前剩餘可用： <span style="color:var(--primary); font-size: 1.8rem;">94</span> 張</div>
     </div>
+    <div id="modal" onclick="if(event.target==this)closeV()">
+        <div id="m-cont">
+            <div id="m-head"><button id="close-btn" onclick="closeV()">關閉視窗</button></div>
+            <iframe id="ifr" allow="geolocation; microphone; camera"></iframe>
+        </div>
+    </div>
 </body></html>
+
+
 
